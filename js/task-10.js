@@ -20,7 +20,11 @@ function createBoxes(amount) {
   let startWidth = 30;
   let startHeigth = 30;
 
-  for (let i = 1; i <= amount; i += 1) {
+  if (amount < Number(inputRef.min) || amount > Number(inputRef.max)) {
+    return alert("Invalid input. Choose number from 1 to 100");
+  }
+
+  for (let i = 1; i <= amount; i += Number(inputRef.step)) {
     const newDiv = document.createElement("div");
     newDiv.style.width = `${startWidth}px`;
     newDiv.style.height = `${startHeigth}px`;
