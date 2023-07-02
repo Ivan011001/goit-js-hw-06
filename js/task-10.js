@@ -11,7 +11,6 @@ const inputRef = document.querySelector("input");
 
 createBtnRef.addEventListener("click", () => {
   createBoxes(inputRef.value);
-  inputRef.value = 0;
 });
 
 destroyBtnRef.addEventListener("click", destroyBoxes);
@@ -38,4 +37,5 @@ function createBoxes(amount) {
 
 function destroyBoxes() {
   boxesRef.innerHTML = "";
+  inputRef.value = 0;
 }
